@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { registerUser } from "../../store/thunkFunctions";
 
 const RegisterPage = () => {
   const {
@@ -9,6 +11,8 @@ const RegisterPage = () => {
     reset,
   } = useForm({ mode: "onChange" });
 
+  const dispatch = useDispatch();
+
   const onSubmit = ({ email, password, name }) => {
     const body = {
       email,
@@ -17,6 +21,8 @@ const RegisterPage = () => {
       image:
         "https://cdn.pixabay.com/photo/2019/08/11/18/59/icon-4399701_1280.png",
     };
+
+    dispatch(registerUser(body));
 
     reset();
   };

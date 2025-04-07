@@ -27,9 +27,9 @@ app.post("/", (req, res) => {
   res.json(req.body);
 });
 
-app.use((error, req, res, next) => {
-  res.send(error.message);
-});
+app.use("/users", require("./routes/users"));
+
+// app.use(express.static(path.join(__dirname, "../uploads")));
 
 const port = 4000;
 app.listen(port, () => {
