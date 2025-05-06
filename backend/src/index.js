@@ -28,10 +28,13 @@ app.post("/", (req, res) => {
 });
 
 app.use("/users", require("./routes/users"));
-
-// app.use(express.static(path.join(__dirname, "../uploads")));
+app.use("/products", require("./routes/products"));
 
 const port = 4000;
 app.listen(port, () => {
   console.log(`${port}번에서 실행되었습니다.`);
 });
+
+// uploads/ 디렉토리를 정적 파일로 제공
+const path = require("path");
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
