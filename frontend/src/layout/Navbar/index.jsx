@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import NavItem from "./Sections/NavItem";
+import { PiAirplaneTakeoff } from "react-icons/pi";
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false);
@@ -15,7 +16,12 @@ const Navbar = () => {
         <div className="flex items-center justify-between mx-5 sm:mx-10">
           {/* Logo */}
           <div className="flex items-center text-2xl h-14">
-            <Link to={"/"}>AEG</Link>
+            <Link to={"/"}>
+              Traveler
+              <span className="absolute top-0 inline-flex items-center justify-center">
+                <PiAirplaneTakeoff />
+              </span>
+            </Link>
           </div>
 
           {/* menu button */}

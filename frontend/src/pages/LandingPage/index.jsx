@@ -107,12 +107,12 @@ const LandingPage = () => {
   };
 
   return (
-    <section>
+    <section className="mt-10">
       <div className="text-center m-7">
-        <h2 className="text-3xl">여행 상품 사이트</h2>
+        <h2 className="text-3xl font-extrabold">Let's Travel Anywhere</h2>
       </div>
       {/* filters */}
-      <div className="flex gap-3">
+      <div className="flex gap-4">
         <div className="w-1/2">
           <CheckBox
             continents={continents}
@@ -124,13 +124,12 @@ const LandingPage = () => {
         <div className="w-1/2">
           <RadioBox
             prices={prices}
-            checkedPrice={filters.price}
             onFilters={(filters) => handleFilters(filters, "price")}
           />
         </div>
       </div>
       {/* search */}
-      <div className="flex justify-end mb-4">
+      <div className="flex justify-end mb-16 mt-4">
         <SearchInput searchTerm={searchTerm} onSearch={handleSearchTerm} />
       </div>
       {/* card */}
@@ -146,7 +145,7 @@ const LandingPage = () => {
             onClick={handleLoadMore}
             className="px-4 py-2 mt-5 text-white bg-black rounded-md hover:bg-gray-500"
           >
-            더보기
+            Loadmore
           </button>
         </div>
       )}
